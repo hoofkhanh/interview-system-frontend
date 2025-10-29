@@ -8,6 +8,7 @@ COPY . .
 
 # --- Build-time ARG duy nhất ---
 ARG BACKEND_BASE_URL
+ARG BACKEND_WS
 
 # --- Set tất cả NEXT_PUBLIC_… từ BASE_URL ---
 ENV NEXT_PUBLIC_AUTH_ENDPOINT=${BACKEND_BASE_URL}/interview-system-auth-service/graphql
