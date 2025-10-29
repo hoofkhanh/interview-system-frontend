@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: hoofkhanh/interview-system-frontend:1.0.0
+    container_name: interview-system-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_AUTH_ENDPOINT: "http://10.120.136.105:8085/interview-system-auth-service/graphql"
+      NEXT_PUBLIC_QUESTION_ENDPOINT: "http://10.120.136.105:8085/interview-system-question-service/graphql"
+      NEXT_PUBLIC_SESSION_ENDPOINT: "http://10.120.136.105:8085/interview-system-session-service/graphql"
+      NEXT_PUBLIC_WS_ENDPOINT: "ws://10.120.136.105:9006/ws/join"
+    command: npm start
