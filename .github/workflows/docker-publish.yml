@@ -6,6 +6,7 @@ on:
 
 env:
   IMAGE_TAG: "1.0.0"
+  BACKEND_BASE_URL: "http://10.120.136.105:8085"
 
 jobs:
   build-and-push:
@@ -28,5 +29,6 @@ jobs:
       - name: Build and push frontend Docker image
         run: |
           docker build -f Dockerfile \
+            --build-arg BACKEND_BASE_URL=${{ env.BACKEND_BASE_URL }} \
             -t ${{ secrets.DOCKERHUB_USERNAME }}/interview-system-frontend:${{ env.IMAGE_TAG }} .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/interview-system-frontend:${{ env.IMAGE_TAG }}
