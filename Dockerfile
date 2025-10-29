@@ -13,7 +13,7 @@ ARG BACKEND_BASE_URL
 ENV NEXT_PUBLIC_AUTH_ENDPOINT=${BACKEND_BASE_URL}/interview-system-auth-service/graphql
 ENV NEXT_PUBLIC_QUESTION_ENDPOINT=${BACKEND_BASE_URL}/interview-system-question-service/graphql
 ENV NEXT_PUBLIC_SESSION_ENDPOINT=${BACKEND_BASE_URL}/interview-system-session-service/graphql
-ENV NEXT_PUBLIC_WS_ENDPOINT=ws://${BACKEND_BASE_URL#http*}/9006/ws/join  # chỉ lấy IP và port
+ENV NEXT_PUBLIC_WS_ENDPOINT=ws://${BACKEND_WS}/ws/join
 
 RUN npm run build
 
