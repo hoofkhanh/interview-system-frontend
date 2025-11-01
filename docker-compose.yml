@@ -3,5 +3,5 @@ services:
     image: hoofkhanh/interview-system-frontend:1.0.0
     container_name: interview-system-frontend
     ports:
-      - "10.120.136.105:3000:3000"
+      - "3000:3000"
     command: npm start
